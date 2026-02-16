@@ -1,2 +1,13 @@
 node_modules
 .env
+
+# Next build output
+.next/
+
+# Vite / npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
