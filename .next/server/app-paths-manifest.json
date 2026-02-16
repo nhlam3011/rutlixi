@@ -1,5 +1,9 @@
 {
-  "/api/draw/route": "app/api/draw/route.js",
+  "/_not-found": "app/_not-found.js",
   "/admin/page": "app/admin/page.js",
+  "/page": "app/page.js",
+  "/draw/page": "app/draw/page.js",
+  "/api/draw/route": "app/api/draw/route.js",
+  "/api/submit-info/route": "app/api/submit-info/route.js",
   "/result/page": "app/result/page.js"
 }
