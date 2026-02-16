@@ -40,13 +40,13 @@ export const TetBlossoms = () => {
                         delay: p.delay,
                         ease: "linear",
                     }}
-                    className={`absolute ${p.depth}`}
+                    className={`absolute ${p.depth} will-change-transform`}
                     style={{
                         width: p.size,
                         height: p.size,
                     }}
                 >
-                    <svg viewBox="0 0 100 100" className="drop-shadow-lg">
+                    <svg viewBox="0 0 100 100" className="drop-shadow-none sm:drop-shadow-lg">
                         <defs>
                             <radialGradient id={`grad-${p.id}`} cx="50%" cy="50%" r="50%">
                                 <stop offset="0%" stopColor={p.type === 'mai' ? "#FFEA00" : "#FFB7C5"} />

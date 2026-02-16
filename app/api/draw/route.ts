@@ -11,8 +11,17 @@ export async function POST(request: Request) {
         }
 
         // Initialize Supabase client (Server-side)
-        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-        const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY! // Or Service Role Key if RLS is strict
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+        const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+        if (!supabaseUrl || !supabaseKey) {
+            console.error('Supabase Configuration Error: URL or ANON_KEY is missing in .env')
+            return NextResponse.json({
+                error: 'Cấu hình hệ thống chưa hoàn thiện. Vui lòng kiểm tra file .env',
+                details: 'Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY'
+            }, { status: 500 })
+        }
+
         const supabase = createClient(supabaseUrl, supabaseKey)
 
         // Call the database function (RPC)

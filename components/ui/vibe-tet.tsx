@@ -90,7 +90,7 @@ export const DongSonPattern = () => (
         <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-            className="w-[160vmax] h-[160vmax] border-[50px] border-yellow-600 rounded-full flex items-center justify-center relative"
+            className="w-[120vmax] h-[120vmax] border-[20px] sm:border-[50px] border-yellow-600 rounded-full flex items-center justify-center relative will-change-transform"
         >
             <div className="absolute inset-0 border-[30px] border-yellow-600 rounded-full opacity-40 m-24" />
             <div className="absolute inset-0 border-[15px] border-yellow-600 rounded-full opacity-20 m-64" />
@@ -153,9 +153,9 @@ export const Couplet = ({ side, text1, text2 }: { side: 'left' | 'right', text1:
 
 export const AmbientGlow = () => (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] bg-[radial-gradient(circle,rgba(220,38,38,0.2)_0%,transparent_70%)] opacity-60 blur-3xl animate-pulse" />
-        <div className="absolute -top-[10%] left-[20%] w-[40vw] h-[40vw] bg-yellow-500/10 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-[10%] right-[20%] w-[50vw] h-[50vw] bg-red-800/20 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100dvh] bg-[radial-gradient(circle,rgba(220,38,38,0.2)_0%,transparent_70%)] opacity-60 blur-2xl sm:blur-3xl animate-pulse" />
+        <div className="absolute -top-[10%] left-[20%] w-[40vw] h-[40vw] bg-yellow-500/10 rounded-full blur-[80px] sm:blur-[120px]" />
+        <div className="absolute -bottom-[10%] right-[20%] w-[50vw] h-[50vw] bg-red-800/20 rounded-full blur-[100px] sm:blur-[150px]" />
     </div>
 )
 
@@ -273,7 +273,7 @@ export const PremiumLixi = ({ isShaking, onClick }: { isShaking: boolean, onClic
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onClick={onClick}
-            className="perspective-1000 relative w-64 h-96 sm:w-80 sm:h-[480px] cursor-pointer group flex items-center justify-center p-4 z-20"
+            className="perspective-1000 relative w-64 h-96 sm:w-80 sm:h-[480px] cursor-pointer group flex items-center justify-center p-4 z-20 will-change-transform"
         >
             <EnergyPulse active={isShaking} />
 
@@ -376,7 +376,7 @@ export const PremiumLixi = ({ isShaking, onClick }: { isShaking: boolean, onClic
 export const AmbientLightBeams = () => (
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 shadow-inner">
         {/* God Rays */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-yellow-500/5 to-transparent blur-[120px] rotate-[-25deg] scale-150 transform -translate-y-1/2" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-yellow-500/5 to-transparent blur-[60px] sm:blur-[120px] rotate-[-25deg] scale-150 transform -translate-y-1/2" />
 
         {/* Dynamic Rays */}
         {Array.from({ length: 5 }).map((_, i) => (
